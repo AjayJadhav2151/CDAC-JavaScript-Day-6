@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const arr=[3,5,7,9,11];
+
+        const [a,b,c,d,e] = arr;
+
+        document.write("<br/>")
+        document.write("<br/>"+"individual variables")
+        document.write("<br/>"+a+","+b+","+c+","+d+","+e);
+        // document.write("<br/>"+a,b,c,d,e);
+        document.write("<br/>")
+        document.write("<br/>"+"first and third from array")
+        const [x,,y,,] = arr;
+        document.write("<br/>"+x+","+y);
+        document.write("<br/>")
+        document.write("<br/>"+"first and last from array")
+        const [p,,,,q] = arr;
+        document.write("<br/>"+p+","+q);
+</script>
+</body>
+</html>

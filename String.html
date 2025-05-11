@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>Enter the String:</label>
+    <input type="text" name="string" id="userstring" />
+    <input type="text" name="string" id="userstringtwo" />
+    <br />
+    <button onclick="stringOperation()">Check All Operations</button>
+    <div id="displaylength"></div>
+    <div id="displayUpper"></div>
+    <div id="displayLower"></div>
+    <div id="displayValue"></div>
+    <div id="displayValue1"></div>
+    <div id="displayindex"></div>
+    <div id="displayConcat"></div>
+    <div id="displaysplit"></div>
+
+    <script>
+        function stringOperation() {
+            let str = document.getElementById('userstring').value;
+            let str1 = document.getElementById('userstringtwo').value;
+            let length = str.length;
+            document.getElementById('displaylength').innerHTML = `Length of String ${str} is: ` + length;
+
+            let upper = str.toUpperCase();
+            let lower = str.toLowerCase();
+            document.getElementById('displayUpper').innerHTML = `UpperCase of String ${str} is: ` + upper;
+            document.getElementById('displayLower').innerHTML = `LowerCase of String ${str} is: ` + lower;
+
+            document.getElementById('displayValue').innerHTML = `W is Present in ${str} index number: ` + str.indexOf('w');
+            document.getElementById('displayValue1').innerHTML = `if 2 W is Present in ${str} index number: ` + str.lastIndexOf('w');
+
+            const char = str.charAt(4);
+            const asc = str.charCodeAt(4);
+            document.getElementById('displayindex').innerHTML = `Character at index 4: '${char}' ASCII code: ${asc}`;
+            document.getElementById('displayConcat').innerHTML = `Concat String is : `+str.concat(str1);
+            
+            let str3 = str.concat(str1);
+            let words = str3.split("");
+            document.getElementById('displaysplit').innerHTML = `Split String is : `+words;
+
+        }
+    </script>
+</body>
+
+</html>

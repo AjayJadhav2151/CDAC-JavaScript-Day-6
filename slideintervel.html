@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="/Day6/1.jpg" alt="slide show" width="300" height="300" id="myimg" />
+
+    <script>
+        var imgarr = ["/Day6/1.jpg", "/Day6/2.jpg", "/Day6/3.jpg", "/Day6/4.jpg", "/Day6/5.jpg"];
+        var idx = 0;
+
+        setInterval(() => {
+            idx++;
+            if (idx == imgarr.length - 1) {
+
+                idx = 0;
+            }
+            document.getElementById("myimg").src = imgarr[idx];
+        }, 1000);
+
+
+    </script>
+</body>
+
+</html>

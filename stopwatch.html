@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        hh=0;
+        mm=0;
+        ss=0;
+        function dispTime() {
+            if(ss < 59) {
+                ss++;
+            } else {
+                ss = 0;
+                if(mm < 59) {
+                    mm++;
+                } else {
+                    mm = 0;
+                    if(hh < 23) {
+                        hh++;
+                    } else {
+                        hh = 0;
+                    }
+                }
+            }
+    
+            var str = hh+":"+mm+":"+ss;
+            document.getElementById("time").innerHTML=str;
+            //automatic page refresh
+            //code , time interval
+            flag = setTimeout(function(){ dispTime()} ,1000);
+        }
+
+        function stopTime() {
+            clearTimeout(flag);
+        }
+        function onclear(){
+            hh=0;
+            mm=0;
+            ss=0;
+            str = hh+":"+mm+":"+ss;
+            clearTimeout(flag);
+            document.getElementById("time").innerHTML=str;
+        }
+    </script>
+</head>
+
+<body onload="dispTime()">
+    <span id="time" style="float:center">        
+    </span>
+    <br/>
+    <hr/>
+    <button onclick="dispTime()"> Start </button>
+    <button onclick="stopTime()"> Pause </button>
+    <button onclick="onclear()"> Clear </button>
+</body>
+</html>

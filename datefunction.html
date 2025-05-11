@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter the Date of Birth:</label>
+    <input type="date" id="userdate" />
+    <button onclick="DateOperation()">Check All Operations</button>
+    <div id="display"></div>
+<div id="age"></div>
+    <script>
+        function DateOperation() {
+            let data = document.getElementById('userdate').value;
+            var d1 = new Date(data);
+
+            let date = new Date()
+
+            let weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            let monthname = ["Jan", "Feb","Mar","Apr","May","Jun","Jul","Agu","Sep","Oct","Nov","Dec"]
+            let str = " ";
+
+            str+=`day : ${weekday[d1.getDay()]} , Month : ${monthname[d1.getMonth()]} , Year : ${d1.getFullYear()}.`
+
+            document.getElementById("display").innerHTML = str;
+
+            let age = date.getFullYear() - d1.getFullYear()
+            console.log(age)
+        }
+    </script>
+</body>
+</html>

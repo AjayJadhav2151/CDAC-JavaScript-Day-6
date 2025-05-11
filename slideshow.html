@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/Day6/1.jpg" alt="slide show" width="300" height="300" id="myimg"/>
+    <br/>
+    <button id="pre" onclick="PreImg()">Previous</button>
+    <button id="next" onclick="nextImg()">Next</button>
+
+    <script>
+        var imgarr =["/Day6/2.jpg","/Day6/3.jpg","/Day6/4.jpg","/Day6/5.jpg"];
+        var idx=0;
+
+        function nextImg(){
+            idx++;
+            if(idx==imgarr.length)
+            idx=0;
+            document.getElementById("myimg").src=imgarr[idx];
+        }
+        
+        function PreImg(){
+            idx--;
+            if(idx==-1)
+            idx=imgarr.length-1;
+            document.getElementById("myimg").src=imgarr[idx];
+        }
+    </script>
+</body>
+</html>
